@@ -21,23 +21,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     mount_options: ["dmode=775,fmode=664"]
   
   config.vm.provision "file", source: "config/.aws/credentials", destination: "~/.aws/credentials"
-  # Install Ansible and backup hosts file
-  config.vm.provision "shell",
-    inline: "sudo apt-add-repository -y ppa:ansible/ansible"
-  config.vm.provision "shell",
-    inline: "sudo apt-get update"
-
-  config.vm.provision "shell",
-    inline: "sudo apt-get install -y ansible"
-  config.vm.provision "shell",
-    inline: "sudo mv /etc/ansible/hosts /etc/ansible/hosts.orig"
-  config.vm.provision "shell",
-    inline: "sudo cp -rf /home/vagrant/deploytoECS/template/hosts /etc/ansible/hosts"
-  config.vm.provision "shell",
-    inline: "sudo ssh-keyscan localhost >>.ssh/known_hosts"  
-  config.vm.provision "shell",
-    inline: "sudo apt-get -y install python-pip"
-  config.vm.provision "shell",
-    inline: "sudo pip install awscli boto3 boto botocore"
-  
+  config.vm.provision "shell", path: "scripts/script.sh"  
 end
