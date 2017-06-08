@@ -32,7 +32,7 @@ Amazon ECS allows you to run and maintain a specified number (the "desired count
 
 #### What is [Ansible](https://github.com/ansible/ansible)?
 
-Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy. Avoid writing scripts or custom code to deploy and update your applicationsâ€” automate in a language that approaches plain English, using SSH, with no agents to install on remote systems.
+Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy. Avoid writing scripts or custom code to deploy and update your applications— automate in a language that approaches plain English, using SSH, with no agents to install on remote systems.
 
 ## Installation requirements
 
@@ -104,4 +104,5 @@ This does the following:
 
 ## Reference
 [AWS ECS](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html)
+
 [ECS services](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html)
