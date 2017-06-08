@@ -32,7 +32,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell",
     inline: "sudo mv /etc/ansible/hosts /etc/ansible/hosts.orig"
   config.vm.provision "shell",
-    inline: "sudo cp -rf /home/vagrant/deploytoECS/hosts /etc/ansible/hosts"
+    inline: "sudo cp -rf /home/vagrant/deploytoECS/template/hosts /etc/ansible/hosts"
   config.vm.provision "shell",
     inline: "sudo ssh-keyscan localhost >>.ssh/known_hosts"  
   config.vm.provision "shell",

@@ -6,7 +6,33 @@ Automated deployment of ECS task and service to pre existing AWS ECS cluster usi
 
 ### Architecture
 
-![Alt](/AWS-ECS-Deploy.jpg "Architecture Diagram")
+![Alt](/resources/AWS-ECS-Deploy.jpg "Architecture Diagram")
+
+### Definitions
+
+#### What is Amazon EC2 Container Service?
+
+Amazon EC2 Container Service (Amazon ECS) is a highly scalable, fast, container management service that makes it easy to run, stop, and manage Docker containers on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances. 
+
+#### What is Task Definition?
+
+To prepare your application to run on Amazon ECS, you create a task definition. The task definition is a text file in JSON format that describes one or more containers that form your application. It can be thought of as a blueprint for your application.
+
+#### What are Clusters?
+
+When you run tasks using Amazon ECS, you place them on a cluster, which is a logical grouping of EC2 instances.
+
+#### What is Container Agent?
+
+The container agent runs on each instance within an Amazon ECS cluster. It sends information about the instance's current running tasks and resource utilization to Amazon ECS, and starts and stops tasks whenever it receives a request from Amazon ECS. 
+
+#### What is a AWS ECS Service?
+
+Amazon ECS allows you to run and maintain a specified number (the "desired count") of instances of a task definition simultaneously in an ECS cluster. This is called a service. If any of your tasks should fail or stop for any reason, the Amazon ECS service scheduler launches another instance of your task definition to replace it and maintain the desired count of tasks in the service.
+
+#### What is [Ansible](https://github.com/ansible/ansible)?
+
+Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy. Avoid writing scripts or custom code to deploy and update your applications— automate in a language that approaches plain English, using SSH, with no agents to install on remote systems.
 
 ## Installation requirements
 
@@ -74,3 +100,8 @@ This does the following:
 
 * Creates a task definition using wordpress and mysql docker images 
 * Creates a ECS service in pre existing cluster(update cluster name in deploy-ecs-task&service.yml file in the "set_fact" task).
+
+
+## Reference
+[AWS ECS](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html)
+[ECS services](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html)
