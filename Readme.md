@@ -4,6 +4,10 @@
 
 Automated deployment of ECS task and service to pre existing AWS ECS cluster using Ansible. 
 
+### Architecture
+
+![Alt](/AWS-ECS-Deploy.jpg "Architecture Diagram")
+
 ## Installation requirements
 
 * Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads.html)
@@ -15,7 +19,7 @@ Start:
 
 `$ vagrant up`
 
-This does the following
+This does the following:
 
 * Copies AWS credentials from host to VM
 * Installs [Ansible](https://www.ansible.com/)
@@ -56,3 +60,17 @@ localhost | SUCCESS => {
     "ping": "pong"
 }
 ```
+### Deploy ECS task and service to AWS ECS cluster
+
+Cd to playbooks directory
+
+`$ cd /deploytoECS/playbooks`
+
+Run the ansible playbook to deploy Wordpress website to ECS task and start a service
+
+`$ ansible-playbook deploy-ecs-task\&service.yml`
+
+This does the following: 
+
+* Creates a task definition using wordpress and mysql docker images 
+* Creates a ECS service in pre existing cluster(update cluster name in deploy-ecs-task&service.yml file in the "set_fact" task).
