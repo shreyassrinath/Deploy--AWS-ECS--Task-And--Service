@@ -1,0 +1,6 @@
+.vagrant
+config/
+playbooks/var.json
+playbooks/*.retry
+
+*.pem
