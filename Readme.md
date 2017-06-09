@@ -32,12 +32,13 @@ Amazon ECS allows you to run and maintain a specified number (the "desired count
 
 #### What is [Ansible](https://github.com/ansible/ansible)?
 
-Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy. Avoid writing scripts or custom code to deploy and update your applications— automate in a language that approaches plain English, using SSH, with no agents to install on remote systems.
+Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy. Avoid writing scripts or custom code to deploy and update your applications, automate in a language that approaches plain English, using SSH, with no agents to install on remote systems.
 
 ## Installation requirements
 
 * Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads.html)
 * Clone this repo
+* Drop in AWS Credentials @ config/.aws/credentials folder. The aws credentials need to have permissions to create ecs tasks and services. For more information on AWS IAM refer [here](http://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
 
 ## Commands
 
@@ -72,7 +73,7 @@ Check to make sure we have the id_rsa.pub file present as specified in the ssh-a
 
 Run the ansible play book - ssh-addkey.yml with ask pass option to make sure we are deploying the key to all machines- in this case there is only one machine- localhost.
 
-`$ ansible-playbook ssh-addkey.yml --ask-pass`
+`$ ansible-playbook deploytoECS/playbooks/ssh-addkey.yml --ask-pass`
 
 Now try the ansible ping module to ping the local server with the ask password option.
 
@@ -90,7 +91,7 @@ localhost | SUCCESS => {
 
 Cd to playbooks directory
 
-`$ cd /deploytoECS/playbooks`
+`$ cd deploytoECS/playbooks`
 
 Run the ansible playbook to deploy Wordpress website to ECS task and start a service
 
