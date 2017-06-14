@@ -60,7 +60,7 @@ SSH into the server
 
 ### Establish SSH trust
 
-In order to establish password less access to nodes(and host) we need to establish SSH trust. The ssh-addkey.yml playbook uses authorized_key module which will help in configuring ssh password less logins on remote machines. Moredetails  on authorized_key module can be found [here](http://docs.ansible.com/ansible/authorized_key_module.html).
+In order to establish password less access to nodes(and host) we need to establish SSH trust. The ssh-addkey.yml playbook uses authorized_key module which will help in configuring ssh password less logins on remote machines. More details  on authorized_key module can be found [here](http://docs.ansible.com/ansible/authorized_key_module.html).
 
 Check to make sure we do not have public RSA key.   
 `$ ls -l .ssh/`
