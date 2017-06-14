@@ -60,7 +60,7 @@ SSH into the server
 
 ### Establish SSH trust
 
-In order to establish password less access to nodes(and host) we need to establish SSH trust. The ssh-addkey.yml playbook will be used to acheive that objective. We are using the authorized_key module here. It is a module, which will help us configure ssh password less logins on remote machines. We tell the authorized_key module, that we want to add an authorized_key to the remote vagrant user, we define where on the management node we should lookup the key file from, then we make sure it exists on the remote machine.
+In order to establish password less access to nodes(and host) we need to establish SSH trust. The ssh-addkey.yml playbook uses authorized_key module which will help in configuring ssh password less logins on remote machines. Moredetails  on authorized_key module can be found [here](http://docs.ansible.com/ansible/authorized_key_module.html).
 
 Check to make sure we do not have public RSA key.   
 `$ ls -l .ssh/`
